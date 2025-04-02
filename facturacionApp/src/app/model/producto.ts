@@ -7,9 +7,7 @@ precio: number;
 stock: number;
 categoria: string;
 
-contructor(){
-
-}
+constructor();
 
 constructor(id: number, nombre: string, descripcion: string, precio: number, stock: number, categoria: string){
     this.id = id;
