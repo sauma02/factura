@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "facturacion2-app": {
+    "facturacionApp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/facturacion2-app",
+            "outputPath": "dist/facturacion-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -32,7 +32,6 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -70,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "facturacion2-app:build:production"
+              "buildTarget": "facturacionApp:build:production"
             },
             "development": {
-              "buildTarget": "facturacion2-app:build:development"
+              "buildTarget": "facturacionApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -97,7 +96,6 @@
               }
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -107,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "1daf45f2-9b1f-4078-b6b5-e9a2b78b6903"
+    "analytics": "dd013ee8-1e3c-4de3-9fc4-60c3e1bbf21b"
   }
 }
