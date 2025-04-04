@@ -1,1 +1,63 @@
-<p>producto-form works!</p>
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #productoForm="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" [(ngModel)]="producto.nombre" 
+          class="form-control" 
+          id="nombre" 
+          name="nombre" 
+          placeholder="Ingrese el nombre del producto"
+          required #nombre="ngModel">
+        <div [hidden]="!nombre.pristine" class="alert alert-danger">El nombre es requerido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" [(ngModel)]="producto.descripcion" 
+          class="form-control" 
+          id="descripcion" 
+          name="descripcion" 
+          placeholder="Ingresa la descripción del producto"
+          required #descripcion="ngModel">
+        <div [hidden]="!descripcion.pristine" class="alert alert-danger">La descripción es requerida</div>
+      </div>
+
+      <div class="form-group">
+        <label for="precio">Precio</label>
+        <input type="text" [(ngModel)]="producto.precio" 
+          class="form-control" 
+          id="precio" 
+          name="precio" 
+          placeholder="Ingresa el precio del producto"
+          required #precio="ngModel">
+        <div [hidden]="!precio.pristine" class="alert alert-danger">El precio es requerido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="stock">Stock</label>
+        <input type="text" [(ngModel)]="producto.stock" 
+          class="form-control" 
+          id="stock" 
+          name="stock" 
+          placeholder="Ingresa el stock del producto"
+          required #stock="ngModel">
+        <div [hidden]="!stock.pristine" class="alert alert-danger">El stock es requerido</div>
+      </div>
+
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <input type="text" [(ngModel)]="producto.categoria" 
+          class="form-control" 
+          id="categoria" 
+          name="categoria" 
+          placeholder="Ingresa la categoría del producto"
+          required #categoria="ngModel">
+        <div [hidden]="!categoria.pristine" class="alert alert-danger">La categoría es requerida</div>
+      </div>
+
+      <button type="submit" [disabled]="!productoForm.form.valid" 
+        class="btn btn-info mt-3">Submit</button>
+    </form>
+  </div>
+</div>

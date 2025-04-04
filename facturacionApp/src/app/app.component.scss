@@ -1,0 +1,127 @@
+// app.component.scss
+
+.main {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  
+    .container {
+      animation: fadeIn 0.5s ease-in-out;
+  
+      .card {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+        }
+  
+        &-body {
+          padding: 2rem;
+  
+          .card-title {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 0;
+            color: #212529;
+            position: relative;
+            padding-bottom: 1rem;
+  
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 100px;
+              height: 4px;
+              background: linear-gradient(90deg, #0d6efd 0%, #198754 100%);
+              border-radius: 2px;
+            }
+          }
+  
+          .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+  
+            &-primary {
+              background-color: #0d6efd;
+              
+              &:hover {
+                background-color: #0b5ed7;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(13, 110, 253, 0.25);
+              }
+            }
+  
+            &-success {
+              background-color: #198754;
+              
+              &:hover {
+                background-color: #157347;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(25, 135, 84, 0.25);
+              }
+            }
+          }
+        }
+      }
+  
+      router-outlet {
+        display: block;
+        margin-top: 2rem;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+    }
+  }
+  
+  // Animaciones
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Media queries para responsividad
+  @media (max-width: 768px) {
+    .main {
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+  
+        .card {
+          &-body {
+            padding: 1.5rem;
+  
+            .card-title {
+              font-size: 2rem;
+            }
+  
+            .btn {
+              width: 100%;
+              margin-bottom: 0.75rem;
+  
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
