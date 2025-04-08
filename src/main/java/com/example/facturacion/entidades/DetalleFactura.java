@@ -8,8 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.math.BigDecimal;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,20 +18,19 @@ import lombok.Setter;
  * @author Admin
  */
 @Entity
-@Table(name = "producto")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Producto {
+public class DetalleFactura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String codigoBarras;
-    private String nombre;
-    private String descripcion;
-    private double precio;
-    private Integer stock;
-    private String categoria;
+    private Long id;
+    @ManyToOne
+    private Factura factura;
+    @ManyToOne
+    private Producto producto;
     
-    
+    private Integer cantidad;
+    private Double subtotal;
+            
 }

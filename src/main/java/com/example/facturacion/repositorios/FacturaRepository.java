@@ -4,8 +4,7 @@
  */
 package com.example.facturacion.repositorios;
 
-import com.example.facturacion.entidades.Producto;
-import java.util.Optional;
+import com.example.facturacion.entidades.Factura;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,9 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author Admin
  */
 @Repository
-public interface ProductoRepository extends JpaRepository<Producto, Long>{
-   public Optional<Producto> findFirstByCodigoBarras(String codigo);
-   public Optional<Producto> findFirstByNombre(String nombre);
-   public Optional<Producto> findFirstById(Long id);
-    
+public interface FacturaRepository extends JpaRepository<Factura, Long>{
+       
 }
